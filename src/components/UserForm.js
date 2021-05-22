@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {addUser} from '../actions/userActions'
+
 class UserForm extends React.Component{
     constructor(props){
         super(props)
@@ -19,7 +22,7 @@ class UserForm extends React.Component{
     }
 
     handleSubmit = () =>{
-        this.props.addUser(this.state);
+        this.props.addNewUser(this.state)
     }
 
     render(){
@@ -47,5 +50,10 @@ class UserForm extends React.Component{
       );
     }
 }
+//conncecting our userForm to the store, we are creating a prop called addNew user 
+//which takes the addUser function
+const mapDispatchToProps = {
+    addNewUser : addUser
+}
 
-export default UserForm;
+export default connect(null, mapDispatchToProps)(UserForm);

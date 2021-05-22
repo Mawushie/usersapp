@@ -13,17 +13,17 @@ class App extends React.Component{
     }
   }
 
-  addUser = (user) => {
-    this.setState({
-      users :[...this.state.users, user]
-    })
-  }
+  // addUser = (user) => {
+  //   this.setState({
+  //     users :[...this.state.users, user]
+  //   })
+  // }
   render(){
     return (
       <div className="row" style ={{marginLeft : 20 , marginTop : 20}}>
   
         <div className="col-md-6"> 
-          <UserForm addUser = {this.addUser} />
+          <UserForm />
         </div>
   
         <div className="col-md-6"> 
