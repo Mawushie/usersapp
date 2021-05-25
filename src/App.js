@@ -13,11 +13,6 @@ class App extends React.Component{
     }
   }
 
-  // addUser = (user) => {
-  //   this.setState({
-  //     users :[...this.state.users, user]
-  //   })
-  // }
   render(){
     return (
       <div className="row" style ={{marginLeft : 20 , marginTop : 20}}>
