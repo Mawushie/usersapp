@@ -22,12 +22,20 @@ class UserForm extends React.Component{
     }
 
     handleSubmit = () =>{
-        this.props.addNewUser(this.state)
+        let userId = 10000 + Math.random() * 10000000;
+        let user = { ...this.state, id: userId };
+        this.props.addNewUser(user);
+        this.setState({
+            username : "",
+            email : "",
+            country : "",
+            password : ""
+        })
     }
 
     render(){
       return(
-          <div >
+          <div style = {{marginLeft : 20,  marginTop: 20}} >
             <form>
                 <label>Username</label> <br></br>
                 <input type ="text" name ="username" onChange = {this.handleOnChange} value = {this.state.username}></input>  <br></br>

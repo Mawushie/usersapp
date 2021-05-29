@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(229, 241, 245);
+}
+
+form{
+    margin-left: 30px;
+}
+
+h2{
+    text-align: center;
+}
+input{
+    width: 80%;
+    height: 40px;
+}
+
+.userinput{
+    background-color:rgb(229, 241, 245);
+    height: 100vh;
+    border-right: grey solid;
+}
+

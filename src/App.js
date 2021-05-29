@@ -1,33 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-import UserForm from './components/UserForm';
-import UserList from './components/UserList';
 import React from 'react';
-
+import UserForm from './components/UserForm';
+import UserItem from './components/UserItem';
+import UserList from './components/UserList';
+import EditUserForm from './components/EditUserForm';
 
 class App extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      users : [] //setting up an empty array here so that the users can be updated here
-    }
-  }
 
   render(){
     return (
-      <div className="row" style ={{marginLeft : 20 , marginTop : 20}}>
-  
-        <div className="col-md-6"> 
-          <UserForm />
-        </div>
-  
-        <div className="col-md-6"> 
-          <UserList users = {this.state.users}/>
-        </div>
-       
-      </div>
-    )
-  }
-}
+      <div className="row">
+        <div className = "col-md-6 userinput">
 
+          <UserForm addUser = {this.addUser} /> 
+        </div>
+        
+        <div className = "col-md-6 userlist">
+          <UserList />   
+        </div>
+        
+      </div>
+  
+    );
+  }
+
+}
 export default App;
