@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {addUser} from '../actions/userActions'
+import {addUser, addUserAction} from '../actions/userActions'
 
 class UserForm extends React.Component{
     constructor(props){
@@ -61,7 +61,7 @@ class UserForm extends React.Component{
 //conncecting our userForm to the store, we are creating a prop called addNew user 
 //which takes the addUser function
 const mapDispatchToProps = {
-    addNewUser : addUser
+    addNewUser : addUserAction
 }
 
 export default connect(null, mapDispatchToProps)(UserForm);

@@ -15,7 +15,7 @@ class UserItem extends React.Component{
     }
 
     handleDelete = () => {
-        this.props.deleteUserAction(this.props.user.id); 
+        this.props.deleteUser(this.props.user.id); 
     }
 
     closeModal = () =>{
@@ -70,7 +70,7 @@ class UserItem extends React.Component{
 }
 
 var mapDispatchToProps = {
-    deleteUserAction : deleteUserAction
+    deleteUser : deleteUserAction
 }
 
 export default connect(null, mapDispatchToProps)(UserItem);

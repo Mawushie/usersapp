@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { editUser } from '../actions/userActions';
+import { editUser, editUserAction } from '../actions/userActions';
 
 
 class EditUserForm extends React.Component{
@@ -62,7 +62,7 @@ class EditUserForm extends React.Component{
 }
 
 var mapDispatchToProps = {
-    editUser : editUser
+    editUser : editUserAction
 }
 
 export default connect(null, mapDispatchToProps)(EditUserForm);

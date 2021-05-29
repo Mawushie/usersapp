@@ -1,11 +1,11 @@
-export function addUser(user){
+export function addUserAction(user){
     return {
     type: "ADD_USER",
     payload: user
 }
 }
 
-export function editUser(id, updatedUser){
+export function editUserAction(id, updatedUser){
     return{
         type: "EDIT_USER",
         payload: {
