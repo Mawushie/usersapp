@@ -12,4 +12,4 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig); //telling firebase which project to work it
 
-export default firebase; //exporting the firebase linked to the project
+export default firebase; 
