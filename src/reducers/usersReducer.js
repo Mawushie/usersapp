@@ -5,7 +5,13 @@ let initialState = {
 const usersReducer = (state = initialState, action)=>{
      switch(action.type){
         case "ADD_USER":
-            return { ...state, users: [...state.users, action.payload] }
+          return { ...state, users: [...state.users, action.payload] }
+        
+        case "ADD_ALL_USERS":
+          let usersfromdb = action.payload
+          return {
+            users : usersfromdb
+          }
 
         case "EDIT_USER":
             var id = action.payload.id;

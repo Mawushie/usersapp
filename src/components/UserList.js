@@ -1,9 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getAllUsersAction } from '../actions/userActions';
 import UserItem from './UserItem';
 
-
 class UserList extends React.Component{
+    constructor(props){
+        super(props)
+    }
+
+    componentDidMount(){//display all users when the component mounts
+        this.props.getAllUsersAction()
+    }
+
     render(){
         return (
             <div>
@@ -17,8 +25,7 @@ class UserList extends React.Component{
             
             </div>
         )
-    }
-   
+    }  
 }
 
 const mapStateToProps = (state) =>{
@@ -27,4 +34,8 @@ const mapStateToProps = (state) =>{
 }
 }
 
-export default connect(mapStateToProps)(UserList);
+const mapDispatchToProps = {
+    getAllUsersAction
+}
+
+export default connect(mapStateToProps , mapDispatchToProps )(UserList);
