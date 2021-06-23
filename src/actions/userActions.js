@@ -2,9 +2,9 @@ import { getFirestore } from "redux-firestore"
 
 export function addUserAction(user){
   return (dispatch, state, {getFirestore})=>{
-    const db = getFirestore()
-    db.collection("users")
-    .add(user)
+    const db = getFirestore() //lets you have access to firestore
+    db.collection("users")// creating a collection called users
+    .add(user) //adds user to the collection
     //when successful, send action to reducer
     .then(()=>{
         dispatch({
@@ -25,7 +25,7 @@ export function getAllUsersAction(){
     db.collection("users")
     .get()
     //this gives you a snapshot of all the documents in the collection
-    //you can give it any variable
+    //you can give it any variable, which i have named results
     .then((results)=>{
         let usersindb = []//create an array to take all users from the database
             results.forEach((doc) =>{ //send each document to the users array
@@ -33,7 +33,7 @@ export function getAllUsersAction(){
         })
 
         dispatch({ //now send the data to the reducer
-            type: "ADD_ALL_USERS",
+            type: "GET_ALL_USERS",
             payload : usersindb
         })
 

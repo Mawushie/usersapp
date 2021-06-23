@@ -13,7 +13,7 @@ class App extends React.Component{
       <div className="row">
         <div className = "col-md-6 userinput">
 
-          <UserForm addUser = {this.addUser} /> 
+          <UserForm /> 
         </div>
         
         <div className = "col-md-6 userlist">

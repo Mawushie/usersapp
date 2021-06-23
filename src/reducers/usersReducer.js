@@ -7,8 +7,8 @@ const usersReducer = (state = initialState, action)=>{
         case "ADD_USER":
           return { ...state, users: [...state.users, action.payload] }
         
-        case "ADD_ALL_USERS":
-          let usersfromdb = action.payload
+        case "GET_ALL_USERS":
+          let usersfromdb = action.payload//payload contains the data that is in the db
           return {
             users : usersfromdb
           }
