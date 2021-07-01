@@ -31,7 +31,7 @@ class UserList extends React.Component{
 const mapStateToProps = (state) =>{
     return{
     usersData: state.users
-}
+    }
 }
 
 const mapDispatchToProps = {

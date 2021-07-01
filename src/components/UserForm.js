@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {addUser, addUserAction} from '../actions/userActions'
+import { addUserAction} from '../actions/userActions'
 
 class UserForm extends React.Component{
     constructor(props){
