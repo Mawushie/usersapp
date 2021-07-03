@@ -1,29 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import UserForm from './components/UserForm';
-import UserItem from './components/UserItem';
-import UserList from './components/UserList';
-import EditUserForm from './components/EditUserForm';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
+import HomePage from './pages/HomePage';
+
 
 class App extends React.Component{
 
   render(){
     return (
-      <div className="row">
-        <div className = "col-md-6 userinput">
+      <div>
+        <BrowserRouter>
+          
+          <Switch>
+            <Route  exact path = '/' component ={HomePage}/>
+            <Route  exact path = '/dashboard' component ={Dashboard} />
+            <Route  exact path = '/signup' component = {SignUp} />
+            <Route  exact path = '/login' component = {LogIn}/>
+          </Switch>
 
-          <UserForm /> 
-        </div>
-        
-        <div className = "col-md-6 userlist">
-          <UserList />   
-        </div>
-        
+        </BrowserRouter>
+
       </div>
-  
     );
   }
-
 }
 export default App;
