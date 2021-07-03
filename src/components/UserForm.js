@@ -36,18 +36,18 @@ class UserForm extends React.Component{
     render(){
       return(
           <div style = {{marginLeft : 20,  marginTop: 20}} >
-            <form>
+            <form className = 'myform'>
                 <label>Username</label> <br></br>
-                <input type ="text" name ="username" onChange = {this.handleOnChange} value = {this.state.username}></input>  <br></br>
+                <input type ="text" name ="username" onChange = {this.handleOnChange} value = {this.state.username}/> <br></br>
 
                 <label>Email</label> <br></br>
-                <input type ="text" name ="email" onChange = {this.handleOnChange} value = {this.state.email}></input> <br></br>
+                <input type ="text" name ="email" onChange = {this.handleOnChange} value = {this.state.email}/><br></br>
 
                 <label>Country</label> <br></br>
-                <input type ="text" name ="country" onChange = {this.handleOnChange} value = {this.state.country}></input><br></br>
+                <input type ="text" name ="country" onChange = {this.handleOnChange} value = {this.state.country}/><br></br>
 
                 <label>Password</label> <br></br>
-                <input type ="password" name ="password" onChange = {this.handleOnChange} value = {this.state.password}></input>
+                <input type ="password" name ="password" onChange = {this.handleOnChange} value = {this.state.password}/>
                 
                 <br></br> <br></br>
 
