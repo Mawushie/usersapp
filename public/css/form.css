@@ -9,7 +9,7 @@ form{
 h2{
     text-align: center;
 }
-input{
+.myform > input{
     width: 80%;
     height: 40px;
 }
