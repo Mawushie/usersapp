@@ -1,4 +1,5 @@
 import { getFirebase } from "react-redux-firebase";
+import { Redirect } from "react-router-dom";
 
 export function signUpAction(email,password){
    return async(dispatch, state, {getFirebase}) =>{
@@ -24,4 +25,17 @@ export function logInAction(email,password){
          console.log(error)  
         }
     }
+ }
+
+ export function logOutAction(){
+     return async (dispatch, state, {getFirebase}) =>{
+         const firebase = getFirebase()
+         try {
+            await firebase.auth().signOut()
+         } 
+         catch (error) {
+            console.log(error)
+             
+         }
+     }
  }
