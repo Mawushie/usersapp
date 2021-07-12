@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { logInAction } from '../actions/authActions'
 
 class LogIn extends Component {
@@ -25,7 +26,18 @@ class LogIn extends Component {
         })
     }
 
+    
+
     render() {
+        //take signed in users to the dashboard when they are logged in
+        //firebase has auth properties on a signed in user  
+        if(this.props.auth.isLoaded === false){
+            return <h2>Loading...</h2>
+        }
+        
+        if(this.props.auth.isEmpty === false){
+            return <Redirect to = '/dashboard' />
+        }
         return (
             <div>
                <h1 className ='text-center'>Log In</h1> 
@@ -46,11 +58,16 @@ class LogIn extends Component {
         )
     }
 }
+const mapStateToProps = (state) =>{
+    return {
+    auth : state.firebaseState.auth
+    }
+}
 
 const mapDispatchToProps = {
     logInAction
 }
 
-export default connect(null, mapDispatchToProps)(LogIn)
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn)
 
 
