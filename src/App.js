@@ -14,7 +14,6 @@ class App extends React.Component{
     return (
       <div>
         <BrowserRouter>
-          
           <Switch>
             <Route  exact path = '/' component ={HomePage}/>
             <ProtectedRoute  exact path = '/dashboard' component ={Dashboard} />
